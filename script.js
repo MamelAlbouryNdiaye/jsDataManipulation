@@ -116,3 +116,13 @@ for (const speed in efficiencies) {
 // If you care about budget and time, 60 MPH is the best compromise.
 // If fuel cost is your top concern, go 55 MPH.
 // Avoid 75 MPH unless you can increase your budget.
+
+
+//////////////// Part 3 : Future Exploration ////////////////
+
+// Speeds and fuel efficiencies
+const speedOptions = [
+  { speed: 55, mpg: 30 },
+  { speed: 60, mpg: 28 },
+  { speed: 75, mpg: 23 }
+];
