@@ -72,6 +72,36 @@ console.log(`Arithmetic chain result: ((n2 - n1) * n3) % n4 = (${n2} - ${n1}) * 
 const isValid = isSum50 && isTwoOdd && areAll25OrLess && isUnique;
 console.log(`The four numbers are valid according to the provided criteria: ${isValid}`);
 
+////////////////  Part 2 : Math problem ///////////////////
 
+const tripDistance = 1500; // miles
+const fuelBudget = 175; // dollars
+const fuelCostPerGallon = 3; // dollars per gallon
 
+// Efficiency data
+const efficiencies = {
+  55: 30,
+  60: 28,
+  75: 23
+};
+
+// Function to calculate trip details at a given speed
+function calculateTrip(speed, mpg) {
+  const gallonsNeeded = tripDistance / mpg;
+  const fuelCost = gallonsNeeded * fuelCostPerGallon;
+  const isBudgetEnough = fuelCost <= fuelBudget;
+  const travelTime = tripDistance / speed;
+
+  console.log(`\n=== At ${speed} MPH ===`);
+  console.log(`Miles per gallon: ${mpg}`);
+  console.log(`Gallons needed: ${gallonsNeeded.toFixed(2)} gal`);
+  console.log(`Total fuel cost: $${fuelCost.toFixed(2)}`);
+  console.log(`Is budget enough? ${isBudgetEnough ? "Yes" : "No"}`);
+  console.log(`Estimated travel time: ${travelTime.toFixed(2)} hours`);
+}
+
+// Run calculations for each speed
+for (const speed in efficiencies) {
+  calculateTrip(Number(speed), efficiencies[speed]);
+}
 
