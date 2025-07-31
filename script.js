@@ -126,3 +126,20 @@ const speedOptions = [
   { speed: 60, mpg: 28 },
   { speed: 75, mpg: 23 }
 ];
+
+// Function to calculate trip stats
+function calculateTrip(speed, mpg) {
+  const gallonsNeeded = tripDistance / mpg;
+  const fuelCost = gallonsNeeded * fuelCostPerGallon;
+  const travelTime = tripDistance / speed;
+  const isAffordable = fuelCost <= fuelBudget;
+
+  return {
+    speed,
+    mpg,
+    gallonsNeeded,
+    fuelCost,
+    travelTime,
+    isAffordable
+  };
+}
