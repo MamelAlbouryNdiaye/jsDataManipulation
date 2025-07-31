@@ -72,7 +72,7 @@ console.log(`Arithmetic chain result: ((n2 - n1) * n3) % n4 = (${n2} - ${n1}) * 
 const isValid = isSum50 && isTwoOdd && areAll25OrLess && isUnique;
 console.log(`The four numbers are valid according to the provided criteria: ${isValid}`);
 
-////////////////  Part 2 : Math problem ///////////////////
+////////////////  Part 2 : Practical Math ///////////////////
 
 const tripDistance = 1500; // miles
 const fuelBudget = 175; // dollars
@@ -105,3 +105,14 @@ for (const speed in efficiencies) {
   calculateTrip(Number(speed), efficiencies[speed]);
 }
 
+//******** */ Which Makes the Most Sense? //////////////////////
+// 55 MPH: Most fuel-efficient and well within budget, but slowest.
+
+// 60 MPH: Still within budget and a bit faster. A good balance.
+
+// 75 MPH: Fastest, but over budget — not affordable with $175.
+
+// ********* */ Conclusion /////////////////////////////////////
+// If you care about budget and time, 60 MPH is the best compromise.
+// If fuel cost is your top concern, go 55 MPH.
+// Avoid 75 MPH unless you can increase your budget.
