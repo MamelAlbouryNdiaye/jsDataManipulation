@@ -143,3 +143,33 @@ function calculateTrip(speed, mpg) {
     isAffordable
   };
 }
+// Analyze all speed options
+let bestOption = null;
+
+console.log("=== Trip Summary for Each Speed Option ===\n");
+
+speedOptions.forEach(option => {
+  const result = calculateTrip(option.speed, option.mpg);
+
+  // results on console
+  console.log(`Speed: ${result.speed} MPH`);
+  console.log(`- MPG: ${result.mpg}`);
+  console.log(`- Gallons needed: ${result.gallonsNeeded.toFixed(2)} gal`);
+  console.log(`- Fuel cost: $${result.fuelCost.toFixed(2)}`);
+  console.log(`- Travel time: ${result.travelTime.toFixed(2)} hours`);
+  console.log(`- Within budget? ${result.isAffordable ? " Yes" : "No"}`);
+  console.log('----------------------------------');
+
+  // Find best option: prioritize affordability, then fastest
+  if (result.isAffordable && (!bestOption || result.fuelCost < bestOption.fuelCost || (result.fuelCost === bestOption.fuelCost && result.travelTime < bestOption.travelTime))) {
+  bestOption = result;
+}
+});
+
+//////////////////***** */ Final Recommendation ////////////////////////
+if (bestOption) {
+  console.log(`\n Speed  Recommended : ${bestOption.speed} MPH`);
+  console.log(`You will stay in budget ($${fuelBudget}) and complete your trip in ${bestOption.travelTime.toFixed(2)} hours.`);
+} else {
+  console.log("\n None of the speed options fit within the fuel budget of $175. Consider increasing your budget or optimizing fuel efficiency.");
+}
